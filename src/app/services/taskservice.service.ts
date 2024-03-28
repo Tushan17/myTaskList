@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Task } from '../interfaces/task';
 
@@ -12,12 +12,20 @@ export class TaskserviceService {
 
   constructor(private http: HttpClient) { }
 
-  public getTasks() {
-    return this.http.get(this.taskAPIUrl + 'task');
+  public getTasks(): Observable<Task[]> {
+    return this.http.get<Task[]>(this.taskAPIUrl + 'task');
   }
 
-  public getTask(id: string) {
-    return this.http.get(this.taskAPIUrl + 'task/' + id);
+  public getTask(id: number): Observable<Task[]> {
+    return this.http.get<Task[]>(this.taskAPIUrl + 'task/' + id);
+  }
+
+  updateTask(id: number, Task): Observable<any> {
+    return this.http.put(this.taskAPIUrl + 'task/update/' + id, Task);
+  }
+
+  deleteTask(id: number) {
+    return this.http.delete(this.taskAPIUrl + 'task/delete/' + id);
   }
 
 }

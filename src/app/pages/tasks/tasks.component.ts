@@ -12,6 +12,7 @@ export class TasksComponent implements OnInit {
   tasks: Task[] = [];
   taskResponse: boolean;
 
+
   searchForm = new FormGroup({
     searchtxt: new FormControl('')
   });
@@ -35,7 +36,7 @@ export class TasksComponent implements OnInit {
     let id = this.searchForm.get('searchtxt').value;
     console.log(this.searchForm.get('searchtxt').value);
 
-    this.taskService.getTask(id).subscribe(Response => {
+    this.taskService.getTask(Number(id)).subscribe(Response => {
       this.taskResponse = Response['status'];
       this.tasks = Response['data'];
     });

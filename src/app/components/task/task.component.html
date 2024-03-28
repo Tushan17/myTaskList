@@ -7,13 +7,31 @@
 
         <ng-template pTemplate="footer">
             <div *ngIf="routeButton else UDbutton">
-                <p-button label="View" styleClass="w-full"></p-button>
+                <p-button label="View" styleClass="w-full" routerLink="/tasks/{{task.id}}">
+                </p-button>
             </div>
 
             <ng-template #UDbutton>
-                <p-button label="Update"></p-button>
-                <p-button label="Delete" styleClass="p-button-secondary"
-                    [style]="{ 'margin-left': '.5em' }"></p-button></ng-template>
+                <p-button label="Update" (click)="showDialog()"></p-button>
+                <p-button label="Delete" (onClick)="deleteTask(task.id)" styleClass="p-button-secondary"
+                    [style]="{ 'margin-left': '.5em' }"></p-button>
+
+            </ng-template>
+
+
         </ng-template>
     </p-card>
 </div>
+
+<!-- update modal -->
+<p-dialog header="Update status" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw',height:'300px' }"
+    [draggable]="false" [resizable]="false">
+
+    <form [formGroup]="taskForm">
+        <p-dropdown formControlName="selectedStatus" [options]="status" optionLabel="code"
+            placeholder="Select a City"></p-dropdown>
+    </form>
+    <p-button label="Update" styleClass="mt-5 w-full" (onClick)="updateTaskStatus()">
+    </p-button>
+
+</p-dialog>
