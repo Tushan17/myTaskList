@@ -15,6 +15,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CreateTaskComponent } from './pages/create-task/create-task.component';
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CreateTaskComponent } from './pages/create-task/create-task.component';
     CardModule,
     DialogModule,
     DropdownModule,
+    InputTextareaModule,
     //angular
     ReactiveFormsModule,
     BrowserAnimationsModule
