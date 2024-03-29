@@ -1,6 +1,7 @@
 <div>
     <p-card styleClass="bg-blue-100 border-round-lg" header="{{task.title|uppercase}}" subheader="ID: {{task.id}}"
-        [style]="{ width: '100%' }">
+        [style]="{ width: widthS }">
+
         <p>{{task.description}}</p>
         <p *ngIf="!routeButton">{{task.long_description}}</p>
         <p class="font-bold">{{task.status}}</p>

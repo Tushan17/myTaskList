@@ -12,6 +12,7 @@ import { TaskserviceService } from 'src/app/services/taskservice.service';
 export class TaskComponent {
   @Input() task: Task;
   @Input() routeButton: boolean;
+  widthS: string;
 
   visible: boolean = false;
   status: object[] = [
@@ -29,6 +30,18 @@ export class TaskComponent {
     private router: Router
   ) {
 
+  }
+
+  ngOnInit() {
+    this.widthfunction();
+  }
+
+  widthfunction() {
+    if (this.routeButton) {
+      this.widthS = '200px'
+    } else {
+      this.widthS = '100%'
+    }
   }
 
   showDialog() {
