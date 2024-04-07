@@ -37,11 +37,13 @@ export class TaskComponent {
   }
 
   widthfunction() {
-    if (this.routeButton) {
-      this.widthS = '200px'
-    } else {
-      this.widthS = '100%'
-    }
+    // if (this.routeButton) {
+    //   this.widthS = '200px'
+    // } else {
+    //   this.widthS = '100%'
+    // }
+
+    this.routeButton ? '200px' : '100%';
   }
 
   showDialog() {
