@@ -1,0 +1,23 @@
+<form [formGroup]="createtask">
+    <div class="field grid mt-5">
+        <label for="title" class="col-12 mb-2 md:col-2 md:mb-0">Title</label>
+        <div class="col-12 md:col-10">
+            <input type="text" pInputText formControlName="title" />
+        </div>
+    </div>
+    <div class="field grid">
+        <label for="Description" class="col-12 mb-2 md:col-2 md:mb-0">Short Description</label>
+        <div class="col-12 md:col-10">
+            <input type="text" pInputText formControlName="description" />
+        </div>
+    </div>
+    <div class="field grid">
+        <label for="LongDescription" class="col-12 mb-2 md:col-2 md:mb-0">Long Description</label>
+        <div class="col-12 md:col-10">
+            <textarea rows="5" cols="30" pInputTextarea formControlName="long_description"></textarea>
+
+        </div>
+    </div>
+</form>
+
+<p-button label="Create" (onClick)="saveTask()"></p-button>
