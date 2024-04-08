@@ -43,7 +43,7 @@ export class TaskComponent {
     //   this.widthS = '100%'
     // }
 
-    this.routeButton ? '200px' : '100%';
+    this.widthS = this.routeButton ? '200px' : '100%';
   }
 
   showDialog() {
